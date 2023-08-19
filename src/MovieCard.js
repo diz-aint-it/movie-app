@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, index }) => {
   return (
-    <div className="movie-card">
-      <img src={movie.posterURL} alt={movie.title} />
-      <h3>{movie.title}</h3>
-      <p>{movie.description}</p>
-      <p>Rating: {movie.rating}</p>
-    </div>
+    <Link to={`/movie/${index}`} className="movie-card-link">
+      <div className="movie-card">
+        <img src={movie.posterURL} alt={movie.title} />
+        <h3>{movie.title}</h3>
+        <p>Rating: {movie.rating}</p>
+      </div>
+    </Link>
   );
 };
 
